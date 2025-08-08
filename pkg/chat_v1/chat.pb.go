@@ -276,11 +276,11 @@ const file_chat_proto_rawDesc = "" +
 	"\rDeleteRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\"@\n" +
 	"\x12SendMessageRequest\x12*\n" +
-	"\amessage\x18\x01 \x01(\v2\x10.chat_v1.MessageR\amessage2\xbd\x01\n" +
+	"\amessage\x18\x01 \x01(\v2\x10.chat_v1.MessageR\amessage2\xc1\x01\n" +
 	"\x06ChatV1\x129\n" +
 	"\x06Create\x12\x16.chat_v1.CreateRequest\x1a\x17.chat_v1.CreateResponse\x128\n" +
-	"\x06Delete\x12\x16.chat_v1.DeleteRequest\x1a\x16.google.protobuf.Empty\x12>\n" +
-	"\vSendMessage\x12\x16.chat_v1.CreateRequest\x1a\x17.chat_v1.CreateResponseB-Z+github.com/jMurad/MChat/pkg/chat_v1;chat_v1b\x06proto3"
+	"\x06Delete\x12\x16.chat_v1.DeleteRequest\x1a\x16.google.protobuf.Empty\x12B\n" +
+	"\vSendMessage\x12\x1b.chat_v1.SendMessageRequest\x1a\x16.google.protobuf.EmptyB-Z+github.com/jMurad/MChat/pkg/chat_v1;chat_v1b\x06proto3"
 
 var (
 	file_chat_proto_rawDescOnce sync.Once
@@ -309,10 +309,10 @@ var file_chat_proto_depIdxs = []int32{
 	0, // 1: chat_v1.SendMessageRequest.message:type_name -> chat_v1.Message
 	1, // 2: chat_v1.ChatV1.Create:input_type -> chat_v1.CreateRequest
 	3, // 3: chat_v1.ChatV1.Delete:input_type -> chat_v1.DeleteRequest
-	1, // 4: chat_v1.ChatV1.SendMessage:input_type -> chat_v1.CreateRequest
+	4, // 4: chat_v1.ChatV1.SendMessage:input_type -> chat_v1.SendMessageRequest
 	2, // 5: chat_v1.ChatV1.Create:output_type -> chat_v1.CreateResponse
 	6, // 6: chat_v1.ChatV1.Delete:output_type -> google.protobuf.Empty
-	2, // 7: chat_v1.ChatV1.SendMessage:output_type -> chat_v1.CreateResponse
+	6, // 7: chat_v1.ChatV1.SendMessage:output_type -> google.protobuf.Empty
 	5, // [5:8] is the sub-list for method output_type
 	2, // [2:5] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
