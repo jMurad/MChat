@@ -36,3 +36,9 @@ generate-chat-api:
 	--go-grpc_out=pkg/chat_v1 --go-grpc_opt=paths=source_relative \
 	--plugin=protoc-gen-go-grpc=bin/protoc-gen-go-grpc \
 	api/chat_v1/chat.proto
+
+build:
+	GOOS=linux GOARCH=amd64 go build -o bin-services/auth_service cmd/auth/main.go
+	GOOS=linux GOARCH=amd64 go build -o bin-services/chat_service cmd/chat-server/main.go
+
+# 
