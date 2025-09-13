@@ -1,3 +1,5 @@
+include .env
+
 LOCAL_BIN:=$(CURDIR)/bin
 
 install-golangci-lint:
@@ -41,4 +43,10 @@ build:
 	GOOS=linux GOARCH=amd64 go build -o bin-services/auth_service cmd/auth/main.go
 	GOOS=linux GOARCH=amd64 go build -o bin-services/chat_service cmd/chat-server/main.go
 
-# 
+copy-to-server:
+	scp -r bin-services/* $(SRV):services/
+
+docker-build-and-push:
+	docker buildx build --no-cache --platform linux/x86_64 -t $(REGISTRY_SRV)/test-server:v0.0.1 .
+	docker login -u admin $(REGISTRY_SRV)
+	docker push $(REGISTRY_SRV)/test-server:v0.0.1
